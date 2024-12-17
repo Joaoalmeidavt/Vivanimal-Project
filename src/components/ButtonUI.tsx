@@ -3,11 +3,11 @@ import { Button, ButtonGroup } from '@nextui-org/button';
 export default function ButtonUI({
   children,
   classNames,
-  onClick,
+  onPress,
 }: {
   children: React.ReactNode;
   classNames?: string;
-  onClick?: () => void;
+  onPress?: () => void;
 }) {
-  return <Button className={`${classNames}`} onClick={onClick} >{children}</Button>;
+  return <Button className={`${classNames}`} onPress={onPress} >{children}</Button>;
 }

@@ -8,6 +8,8 @@ import PetLover from "./main/PetLover";
 import { texts } from "../lib/texts";
 import Image from "next/image";
 import ButtonUI from "./ButtonUI";
+import VetPartner from "./main/Vetpartner";
+import ModalUI from "./ModalUI.tsx/ModalUI";
 
 export default function Main() {
     const [selectedSpecies, setSelectedSpecies] = useState<string | null>(null);
@@ -23,15 +25,16 @@ export default function Main() {
     return (
         <section className="container m-auto w-[90%] flex flex-col gap-8 justify-center items-center pt-8">
             <PetLover />
+            <VetPartner />
             <h2 className="text-xl font-semibold text-blue-900 w-full">
                 Categorias
             </h2>
             <article className="w-full flex gap-4 -mt-4">
                 <ButtonUI
-                    onClick={() => setSelectedSpecies("cat")}
+                    onPress={() => setSelectedSpecies("cat")}
                     classNames={`min-h-12 bg-white p-2 ${selectedSpecies === "cat"
-                        ? "bg-blue-600 text-white"
-                        : "hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white"
+                        ? "bg-[#4587FC] text-white"
+                        : "hover:bg-[#4587FC] hover:text-white focus:bg-[#4587FC] focus:text-white"
                         }`}
                 >
                     <span className="bg-sky-100 p-2 rounded-lg">
@@ -40,10 +43,10 @@ export default function Main() {
                     <span className="px-2">Gatos</span>
                 </ButtonUI>
                 <ButtonUI
-                    onClick={() => setSelectedSpecies("dog")}
+                    onPress={() => setSelectedSpecies("dog")}
                     classNames={`min-h-12 bg-white p-2 ${selectedSpecies === "dog"
-                        ? "bg-blue-600 text-white"
-                        : "hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white"
+                        ? "bg-[#4587FC] text-white"
+                        : "hover:bg-[#4587FC] hover:text-white focus:bg-[#4587FC] focus:text-white"
                         }`}
                 >
                     <span className="bg-sky-100 p-2 rounded-lg">
@@ -52,10 +55,10 @@ export default function Main() {
                     <span className="px-2">Cães</span>
                 </ButtonUI>
                 <ButtonUI
-                    onClick={() => setSelectedSpecies(null)}
+                    onPress={() => setSelectedSpecies(null)}
                     classNames={`min-h-12 bg-white p-2 ${selectedSpecies === null
-                        ? "bg-blue-600 text-white"
-                        : "hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white"
+                        ? "bg-[#4587FC] text-white"
+                        : "hover:bg-[#4587FC] hover:text-white focus:bg-[#4587FC] focus:text-white"
                         }`}
                 >
                     <span className="bg-sky-100 p-2 rounded-lg">
@@ -65,20 +68,30 @@ export default function Main() {
                 </ButtonUI>
             </article>
 
-            {/* Renderiza os animais filtrados */}
-            {filteredAnimals.map((animal) => (
-                <PetCard
-                    key={animal.id}
-                    name={animal.name}
-                    species={animal.species}
-                    age={animal.age}
-                    gender={animal.gender}
-                    size={animal.size}
-                    status={animal.status}
-                    picture={animal.picture}
-                    description={animal.description}
-                />
-            ))}
+            <article className="flex flex-wrap gap-4 justify-center">
+                {/* Renderiza os animais filtrados */}
+
+                {filteredAnimals.map((animal) => (
+                    <ModalUI key={animal.id}
+                        name={animal.name}
+                        species={animal.species}
+                        age={animal.age}
+                        gender={animal.gender}
+                        size={animal.size}
+                        status={animal.status}
+                        picture={animal.picture}
+                        description={animal.description}>
+                        <PetCard
+                            key={animal.id}
+                            name={animal.name}
+                            status={animal.status}
+                            picture={animal.picture}
+                        />
+                    </ModalUI>
+
+                ))}
+
+            </article>
         </section>
     );
 }

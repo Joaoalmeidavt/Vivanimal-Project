@@ -12,7 +12,7 @@ export default function PetLover() {
                         <p className="text-sm">Ajude o abrigo e seja um voluntário</p>
 
                     </article>
-                    <ButtonUI classNames="bg-black text-md text-white rounded-lg w-36">Join Now</ButtonUI>
+                    <ButtonUI classNames="bg-black text-md text-white rounded-lg w-36">Quero ajudar</ButtonUI>
                 </article>
             </section>
         </>

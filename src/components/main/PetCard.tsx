@@ -1,47 +1,53 @@
+'use client'
+import { useState } from "react";
 import { PetCardProps } from "@/types/types";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
+import { IoIosHeartEmpty } from "react-icons/io";
+import { IoIosHeart } from "react-icons/io";
+
 export default function PetCard({
     name,
-    species,
-    age,
-    gender,
-    size,
     status,
     picture,
-    description,
 }: PetCardProps) {
+    // Estado para controlar se o animal foi "favoritado"
+    const [isFavorite, setIsFavorite] = useState(false);
+
+    // Função para alternar entre os ícones
+    const handleFavoriteToggle = () => {
+        setIsFavorite(!isFavorite);
+    };
+
     return (
-        <Card className="max-w-sm">
+        <Card className="max-w-sm p-4">
             <CardBody className="overflow-visible">
                 <Image
                     alt={name}
-                    className="object-cover rounded-xl rounded-b-none"
+                    className="object-cover rounded-xl"
                     src={picture}
                     width={371}
+                    height={370}
+                    style={{ maxHeight: '300px', width: '350px' }}
                 />
             </CardBody>
-            <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <article className="flex justify-between w-full">
-                    <p className="text-tiny uppercase font-bold">{name}</p>
+            <CardHeader className="pb-0 pt-2  flex items-start">
+                <article className="flex flex-col justify-between w-full pt-2 ">
+                    <p className="uppercase font-bold">{name}</p>
+                    <p className="text-gray-600 text-sm ">{status === true ? "Adotado" : "Disponível para adoção"}</p>
                 </article>
-                <small className="text-default-500 mb-2">Age: {age} years</small>
-                <p className="text-small text-default-500">
-                    <strong>Species:</strong> {species}
-                </p>
-                <p className="text-small text-default-500">
-                    <strong>Gender:</strong> {gender}
-                </p>
-                <p className="text-small text-default-500">
-                    <strong>Size:</strong> {size}
-                </p>
-                <p className="text-small text-default-500">
-                    <strong>Status:</strong> {status}
-                </p>
-                <p className="text-small text-default-500">
-                    <strong>Description:</strong> {description}
-                </p>
+                <article className="pt-2">
+                    <button
+                        className="bg-gray-200/50 p-2 rounded-lg"
+                        onClick={handleFavoriteToggle}
+                    >
+                        {isFavorite ? (
+                            <IoIosHeart className="w-6 h-6 text-red-500" />
+                        ) : (
+                            <IoIosHeartEmpty className="w-6 h-6 text-gray-600" />
+                        )}
+                    </button>
+                </article>
             </CardHeader>
         </Card>
     );
 }
-

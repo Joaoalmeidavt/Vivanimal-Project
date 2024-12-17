@@ -9,3 +9,9 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+.bg-vetPartner {
+    background-image: url('/vetPartner.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
