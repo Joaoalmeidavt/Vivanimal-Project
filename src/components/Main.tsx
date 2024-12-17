@@ -22,10 +22,7 @@ export default function Main() {
 
     return (
         <section className="container m-auto w-[90%] flex flex-col gap-8 justify-center items-center pt-8">
-            {/* Componente para exibir informações adicionais */}
             <PetLover />
-
-            {/* Botões com filtros */}
             <h2 className="text-xl font-semibold text-blue-900 w-full">
                 Categorias
             </h2>

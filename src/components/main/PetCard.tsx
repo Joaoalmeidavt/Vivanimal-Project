@@ -15,9 +15,9 @@ export default function PetCard({
             <CardBody className="overflow-visible">
                 <Image
                     alt={name}
-                    className="object-cover rounded-xl"
+                    className="object-cover rounded-xl rounded-b-none"
                     src={picture}
-                    width={270}
+                    width={371}
                 />
             </CardBody>
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">

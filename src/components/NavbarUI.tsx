@@ -30,10 +30,10 @@ const menuItems = [
 export default function NavbarUI() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     return (
-        <Navbar>
+        <Navbar isBordered>
             <NavbarContent justify="start">
-                <NavbarBrand className="mr-4">
-                   <Image src="/logo.png" alt="logo" width={100} height={100} />
+                <NavbarBrand className="mr-4 -mt-2">
+                    <Image src="/logo.png" alt="logo" width={100} height={100} />
                 </NavbarBrand>
                 <NavbarContent className="hidden sm:flex gap-3">
                     {menuItems.map((item, index) => (
