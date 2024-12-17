@@ -37,7 +37,7 @@ export default function Main() {
                         : "hover:bg-[#4587FC] hover:text-white focus:bg-[#4587FC] focus:text-white"
                         }`}
                 >
-                    <span className="bg-sky-100 p-2 rounded-lg">
+                    <span className="bg-sky-100 w-8 h-8 flex justify-center items-center rounded-lg">
                         <Image src="/radio/catRadio.png" alt="cat" width={20} height={20} />
                     </span>
                     <span className="px-2">Gatos</span>
@@ -49,7 +49,7 @@ export default function Main() {
                         : "hover:bg-[#4587FC] hover:text-white focus:bg-[#4587FC] focus:text-white"
                         }`}
                 >
-                    <span className="bg-sky-100 p-2 rounded-lg">
+                    <span className="bg-sky-100 w-8 h-8 flex justify-center items-center rounded-lg">
                         <Image src="/radio/dogRadio.png" alt="dog" width={20} height={20} />
                     </span>
                     <span className="px-2">Cães</span>
@@ -61,7 +61,7 @@ export default function Main() {
                         : "hover:bg-[#4587FC] hover:text-white focus:bg-[#4587FC] focus:text-white"
                         }`}
                 >
-                    <span className="bg-sky-100 p-2 rounded-lg">
+                    <span className="bg-sky-100 w-8 h-8 flex justify-center items-center rounded-lg">
                         <Image src="/radio/catAndDog.png" alt="all" width={20} height={20} />
                     </span>
                     <span className="px-2">Todos</span>

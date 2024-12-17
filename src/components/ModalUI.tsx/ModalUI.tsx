@@ -29,84 +29,98 @@ export default function ModalUI({
 
     return (
         <>
-            <div className="">
-                <button
-                    onClick={() => handleOpen(!isOpen)}
-                    className="w-full"
-                >
-                    {children}
-                </button>
-            </div>
-            <Modal scrollBehavior="outside" backdrop="blur" isOpen={isOpen} onClose={onClose}>
-                <ModalContent>
+            <button
+                onClick={() => handleOpen(!isOpen)}
+                className="w-full"
+            >
+                {children}
+            </button>
+            <Modal scrollBehavior="outside" backdrop="blur" isOpen={isOpen} onClose={onClose} placement="bottom-center" hideCloseButton={true}>
+                <ModalContent >
                     {(onClose) => (
                         <>
-                            <ModalHeader className="flex flex-col gap-1"> </ModalHeader>
-                            <ModalBody className="p-0">
+                            <ModalBody className="p-6 bg-sky-100 rounded-2xl" >
                                 <Image
                                     alt={name}
-                                    className="object-cover rounded-xl -mt-8"
+                                    className="object-cover rounded-2xl m-auto "
                                     src={picture}
                                     width={371}
                                     height={370}
-                                    style={{ maxHeight: '450px', width: '450px' }}
+                                    style={{ maxHeight: '410px', width: '415px' }}
                                 />
-                                <article className="p-4">
+                                <article className="flex flex-col gap-5 mt-2">
+                                    <section className="flex justify-between">
+                                        <article >
+                                            <h2 className="text-2xl font-semibold text-blue-900">{name}</h2>
+                                            <p className="text-gray-600 text-sm ">{status === true ? "Adotado" : "Disponível para adoção"}</p>
+                                        </article>
+                                        <article>falta algo aqui</article>
+                                    </section>
 
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar risus non
-                                        risus hendrerit venenatis. Pellentesque sit amet hendrerit risus, sed porttitor
-                                        quam.
-                                    </p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar risus non
-                                        risus hendrerit venenatis. Pellentesque sit amet hendrerit risus, sed porttitor
-                                        quam.
-                                    </p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar risus non
-                                        risus hendrerit venenatis. Pellentesque sit amet hendrerit risus, sed porttitor
-                                        quam.
-                                    </p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar risus non
-                                        risus hendrerit venenatis. Pellentesque sit amet hendrerit risus, sed porttitor
-                                        quam.
-                                    </p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar risus non
-                                        risus hendrerit venenatis. Pellentesque sit amet hendrerit risus, sed porttitor
-                                        quam.
-                                    </p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar risus non
-                                        risus hendrerit venenatis. Pellentesque sit amet hendrerit risus, sed porttitor
-                                        quam.
-                                    </p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar risus non
-                                        risus hendrerit venenatis. Pellentesque sit amet hendrerit risus, sed porttitor
-                                        quam.
-                                    </p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar risus non
-                                        risus hendrerit venenatis. Pellentesque sit amet hendrerit risus, sed porttitor
-                                        quam.
-                                    </p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar risus non
-                                        risus hendrerit venenatis. Pellentesque sit amet hendrerit risus, sed porttitor
-                                        quam.
-                                    </p>
+                                    <section className=" flex flex-col gap-2">
+                                        <article className="flex gap-2">
+                                            <ButtonUI
+                                                classNames={`min-h-16 w-1/2 bg-white p-2 flex justify-start items-center ga p-2
+                                            `}
+                                            >
+                                                <span className="bg-sky-100 w-12 h-12 flex justify-center items-center rounded-lg">
+                                                    <Image src="/radio/catAndDog.png" alt="all" width={30} height={30} />
+                                                </span>
+                                                <span className="text-left">
+                                                    <p className="text-xs text-gray-600">Idade</p>
+                                                    <p className="font-bold text-blue-900">{age} ano</p></span>
+                                            </ButtonUI>
+                                            <ButtonUI
+                                                classNames={`min-h-16 w-1/2 bg-white p-2 flex justify-start items-center gap-2
+                                            `}
+                                            >
+                                                <span className="bg-sky-100 w-12 h-12 flex justify-center items-center rounded-lg">
+                                                    <Image src="/radio/catAndDog.png" alt="all" width={30} height={30} />
+                                                </span>
+                                                <span className="text-left">
+                                                    <p className="text-xs text-gray-600">Espécie</p>
+                                                    <p className="font-bold text-blue-900">{species === "Cat" ? "Gato" : "Cachorro"}</p></span>
+                                            </ButtonUI>
+                                        </article>
+                                        <article className="flex gap-2">
+                                            <ButtonUI
+                                                classNames={`min-h-16 w-1/2 bg-white p-2 flex justify-start items-center gap-2
+                                            `}
+                                            >
+                                                <span className="bg-sky-100 w-12 h-12 flex justify-center items-center rounded-lg">
+                                                    <Image src="/radio/catAndDog.png" alt="all" width={30} height={30} />
+                                                </span>
+                                                <span className="text-left">
+                                                    <p className="text-xs text-gray-600">Gênero</p>
+                                                    <p className="font-bold text-blue-900">{gender === "male" ? "Macho" : "Femea"}</p></span>
+                                            </ButtonUI>
+                                            <ButtonUI
+                                                classNames={`min-h-16 w-1/2 bg-white p-2 flex justify-start items-center gap-2
+                                            `}
+                                            >
+                                                <span className="bg-sky-100 w-12 h-12 flex justify-center items-center rounded-lg">
+                                                    <Image src="/radio/catAndDog.png" alt="all" width={30} height={30} />
+                                                </span>
+                                                <span className="text-left">
+                                                    <p className="text-xs text-gray-600">Tamanho</p>
+                                                    <p className="font-bold text-blue-900">{size === "small" ? "Pequeno" : "Grande"}</p></span>
+                                            </ButtonUI>
+                                        </article>
+                                    </section>
+                                    <section>
+                                        <article>
+                                            <h2 className="text-xl font-semibold text-blue-900">Sobre o {name}</h2>
+                                            <p>{description}</p>
+                                        </article>
+                                    </section>
+
+
 
                                 </article>
                             </ModalBody>
-                            <ModalFooter>
+                            <ModalFooter className="bg-sky-100">
                                 <ButtonUI onPress={onClose}>
-                                    Close
-                                </ButtonUI>
-                                <ButtonUI onPress={onClose}>
-                                    Action
+                                    Adote agora!
                                 </ButtonUI>
                             </ModalFooter>
                         </>
