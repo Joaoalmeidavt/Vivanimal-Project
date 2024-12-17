@@ -33,8 +33,8 @@ export default function Main() {
                 <ButtonUI
                     onClick={() => setSelectedSpecies("cat")}
                     classNames={`min-h-12 bg-white p-2 ${selectedSpecies === "cat"
-                            ? "bg-blue-600 text-white"
-                            : "hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white"
+                        ? "bg-blue-600 text-white"
+                        : "hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white"
                         }`}
                 >
                     <span className="bg-sky-100 p-2 rounded-lg">
@@ -45,8 +45,8 @@ export default function Main() {
                 <ButtonUI
                     onClick={() => setSelectedSpecies("dog")}
                     classNames={`min-h-12 bg-white p-2 ${selectedSpecies === "dog"
-                            ? "bg-blue-600 text-white"
-                            : "hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white"
+                        ? "bg-blue-600 text-white"
+                        : "hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white"
                         }`}
                 >
                     <span className="bg-sky-100 p-2 rounded-lg">
@@ -57,12 +57,12 @@ export default function Main() {
                 <ButtonUI
                     onClick={() => setSelectedSpecies(null)}
                     classNames={`min-h-12 bg-white p-2 ${selectedSpecies === null
-                            ? "bg-blue-600 text-white"
-                            : "hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white"
+                        ? "bg-blue-600 text-white"
+                        : "hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white"
                         }`}
                 >
                     <span className="bg-sky-100 p-2 rounded-lg">
-                        <Image src="/radio/allRadio.png" alt="all" width={20} height={20} />
+                        <Image src="/radio/catAndDog.png" alt="all" width={20} height={20} />
                     </span>
                     <span className="px-2">Todos</span>
                 </ButtonUI>

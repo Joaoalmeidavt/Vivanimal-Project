@@ -5,6 +5,7 @@ import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
 import AvatarUI from "./AvatarUI";
 import { IoIosSearch } from "react-icons/io";
+import Image from "next/image";
 
 export const AcmeLogo = () => {
     return (
@@ -32,12 +33,10 @@ export default function NavbarUI() {
         <Navbar>
             <NavbarContent justify="start">
                 <NavbarBrand className="mr-4">
-                    <AcmeLogo />
-                    <p className="font-bold text-inherit text.">logo</p>
+                   <Image src="/logo.png" alt="logo" width={100} height={100} />
                 </NavbarBrand>
                 <NavbarContent className="hidden sm:flex gap-3">
                     {menuItems.map((item, index) => (
-
                         <NavbarItem key={index}>
                             <Link color="foreground" href="#">
                                 {item}
@@ -63,13 +62,13 @@ export default function NavbarUI() {
                     type="search"
                 />
 
-                <NavbarContent>
+                {/* <NavbarContent>
                     <NavbarMenuToggle
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                         className="sm:hidden"
                         icon={<AvatarUI />}
                     />
-                </NavbarContent>
+                </NavbarContent> */}
                 <NavbarMenu className="items-end">
                     {menuItems.map((item, index) => (
                         <NavbarMenuItem key={`${item}-${index}`}>

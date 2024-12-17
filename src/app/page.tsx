@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className='h-screen bg-sky-100'>
+    <main className='h-full pb-24 bg-sky-100 relative'>
       <NavbarUI />
       <Main />
       <Footer />
