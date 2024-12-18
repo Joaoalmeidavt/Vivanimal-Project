@@ -23,7 +23,7 @@ export default function Main() {
         : animals;
 
     return (
-        <section className="container m-auto w-[90%] flex flex-col gap-8 justify-center items-center pt-8">
+        <section className="container m-auto w-[90%] flex flex-col gap-8 justify-center items-center pt-8 pb-24">
             <PetLover />
             <VetPartner />
             <h2 className="text-xl font-semibold text-blue-900 w-full">

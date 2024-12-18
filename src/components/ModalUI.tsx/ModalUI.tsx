@@ -5,6 +5,8 @@ import ButtonUI from "../ButtonUI";
 import PetCard from "../main/PetCard";
 import Image from "next/image";
 import { PetCardProps } from "@/types/types";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { TbCoinEuroFilled } from "react-icons/tb";
 
 export default function ModalUI({
     children,
@@ -39,7 +41,7 @@ export default function ModalUI({
                 <ModalContent >
                     {(onClose) => (
                         <>
-                            <ModalBody className="p-6 bg-sky-100 rounded-2xl" >
+                            <ModalBody className="p-6 rounded-t-2xl" >
                                 <Image
                                     alt={name}
                                     className="object-cover rounded-2xl m-auto "
@@ -57,10 +59,10 @@ export default function ModalUI({
                                         <article>falta algo aqui</article>
                                     </section>
 
-                                    <section className=" flex flex-col gap-2">
+                                    <section className=" flex flex-col gap-2 -mt-2">
                                         <article className="flex gap-2">
                                             <ButtonUI
-                                                classNames={`min-h-16 w-1/2 bg-white p-2 flex justify-start items-center ga p-2
+                                                classNames={`min-h-16 w-1/2 bg-white p-2 flex justify-start items-center ga p-2 shadow-md
                                             `}
                                             >
                                                 <span className="bg-sky-100 w-12 h-12 flex justify-center items-center rounded-lg">
@@ -71,7 +73,7 @@ export default function ModalUI({
                                                     <p className="font-bold text-blue-900">{age} ano</p></span>
                                             </ButtonUI>
                                             <ButtonUI
-                                                classNames={`min-h-16 w-1/2 bg-white p-2 flex justify-start items-center gap-2
+                                                classNames={`min-h-16 w-1/2 bg-white p-2 flex justify-start items-center gap-2 shadow-md
                                             `}
                                             >
                                                 <span className="bg-sky-100 w-12 h-12 flex justify-center items-center rounded-lg">
@@ -84,7 +86,7 @@ export default function ModalUI({
                                         </article>
                                         <article className="flex gap-2">
                                             <ButtonUI
-                                                classNames={`min-h-16 w-1/2 bg-white p-2 flex justify-start items-center gap-2
+                                                classNames={`min-h-16 w-1/2 bg-white p-2 flex justify-start items-center gap-2 shadow-md
                                             `}
                                             >
                                                 <span className="bg-sky-100 w-12 h-12 flex justify-center items-center rounded-lg">
@@ -92,10 +94,10 @@ export default function ModalUI({
                                                 </span>
                                                 <span className="text-left">
                                                     <p className="text-xs text-gray-600">Gênero</p>
-                                                    <p className="font-bold text-blue-900">{gender === "male" ? "Macho" : "Femea"}</p></span>
+                                                    <p className="font-bold text-blue-900">{gender === "male" ? "Macho" : "Fêmea"}</p></span>
                                             </ButtonUI>
                                             <ButtonUI
-                                                classNames={`min-h-16 w-1/2 bg-white p-2 flex justify-start items-center gap-2
+                                                classNames={`min-h-16 w-1/2 bg-white p-2 flex justify-start items-center gap-2 shadow-md
                                             `}
                                             >
                                                 <span className="bg-sky-100 w-12 h-12 flex justify-center items-center rounded-lg">
@@ -118,9 +120,17 @@ export default function ModalUI({
 
                                 </article>
                             </ModalBody>
-                            <ModalFooter className="bg-sky-100">
-                                <ButtonUI onPress={onClose}>
-                                    Adote agora!
+                            <ModalFooter className="">
+                                <ButtonUI onPress={onClose} classNames="rounded-br-none h-12 text-gray-600 bg-gray-300">
+                                    Contacto <BsFillTelephoneFill className="min-w-3 min-h-3" />
+                                </ButtonUI>
+                                <ButtonUI onPress={onClose} classNames="rounded-br-none h-12 text-gray-600">
+                                    Apadrinhar <TbCoinEuroFilled className="min-w-4 min-h-4" />
+                                </ButtonUI>
+                                <ButtonUI onPress={onClose} classNames="rounded-br-none h-12 bg-[#E04465] text-white">
+                                    Me adopte!
+                                    {species === "Cat" ? <Image src="/animalModal/catPaws.png" alt="all" width={20} height={20} /> : <Image src="/animalModal/dogsPaw.png" alt="all" width={20} height={20} />}
+
                                 </ButtonUI>
                             </ModalFooter>
                         </>
