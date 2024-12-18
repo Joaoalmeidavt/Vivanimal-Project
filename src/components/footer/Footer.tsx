@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link';
 import { TfiLinkedin } from 'react-icons/tfi';
 import React, { useState } from 'react';
@@ -9,10 +10,11 @@ import {
     BiSolidDownload,
 } from 'react-icons/bi';
 import Contancts from './Contacts';
+import { useRouter } from 'next/navigation';
 
 
 export default function Footer() {
-
+    const route = useRouter();
 
     return (
         <section
@@ -24,7 +26,7 @@ export default function Footer() {
                     <p>
                         aa
                     </p> */}
-                    <button className="py-2 px-6 rounded-full border border-white text-xl hover:border-[#1D7B83] hover:bg-white hover:text-[#1D7B83]">
+                    <button className="py-2 px-6 rounded-full border border-white text-xl hover:border-[#1D7B83] hover:bg-white hover:text-[#1D7B83]" onClick={() => route.push('/ajuda-voluntaria')}>
                         Seja um apoiador!
                     </button>
                     <aside className="w-full flex justify-center items-center gap-4 m-auto">

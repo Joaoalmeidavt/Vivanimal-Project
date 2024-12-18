@@ -1,8 +1,10 @@
-
+'use client'
 
 import Image from "next/image";
 import ButtonUI from "../ButtonUI";
+import { useRouter } from "next/navigation";
 export default function PetLover() {
+    const route = useRouter();
     return (
         <>
             <section className="p-6 w-full  h-44 bg-petLove rounded-lg flex justify-between overflow-hidden relative">
@@ -12,7 +14,7 @@ export default function PetLover() {
                         <p className="text-sm">Ajude o abrigo e seja um voluntário</p>
 
                     </article>
-                    <ButtonUI classNames="bg-black text-md text-white rounded-lg w-36">Quero ajudar</ButtonUI>
+                    <ButtonUI classNames="bg-black text-md text-white rounded-lg w-36" onPress={() => route.push('/ajuda-voluntaria')}>Quero ajudar</ButtonUI>
                 </article>
             </section>
         </>
