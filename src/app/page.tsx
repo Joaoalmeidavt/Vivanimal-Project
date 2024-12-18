@@ -4,7 +4,7 @@ import Footer from '@/components/footer/Footer'
 
 export default function Home() {
   return (
-    <main className='h-full bg-sky-100 relative'>
+    <main className='h-full bg-gray-50 relative'>
 
       <Main />
       <Footer />

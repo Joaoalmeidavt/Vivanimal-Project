@@ -18,7 +18,7 @@ export default function Footer() {
 
     return (
         <section
-            className="footer w-full flex flex-col justify-center items-center relative bg-[#1D7B83]" id='footer'
+            className="footer w-full flex flex-col justify-center items-center relative bg-[#1D7B83]" id='footer relative'
         >
             <section>
                 <article className=" pt-16 pb-8 container flex flex-col justify-center items-center gap-8 m-auto w-[80%] text-white text-center">

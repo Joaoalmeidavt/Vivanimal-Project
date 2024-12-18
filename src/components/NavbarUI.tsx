@@ -22,10 +22,11 @@ export const AcmeLogo = () => {
 
 
 const menuItems = [
-    "Features",
-    "Customers",
-    "Integrations",
-    "Deletar perfil"
+    "Home",
+    "Adopte-me",
+    "Seja um voluntário",
+    "Veterinários Parceiros",
+    "Adestrador"
 ]
 export default function NavbarUI() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -35,7 +36,7 @@ export default function NavbarUI() {
                 <NavbarBrand className="mr-4 -mt-2">
                     <Image src="/logo.png" alt="logo" width={100} height={100} />
                 </NavbarBrand>
-                <NavbarContent className="hidden sm:flex gap-3">
+                <NavbarContent className="hidden sm:flex gap-3 font-bold">
                     {menuItems.map((item, index) => (
                         <NavbarItem key={index}>
                             <Link color="foreground" href="#">
@@ -47,8 +48,8 @@ export default function NavbarUI() {
                 </NavbarContent>
             </NavbarContent>
 
-            <NavbarContent as="div" className="items-center" justify="end">
-                <Input
+            <NavbarContent as="div" className="flex items-end justify-end"  >
+                {/* <Input
                     classNames={{
                         base: "max-w-full sm:max-w-[10rem] h-10",
                         mainWrapper: "h-full",
@@ -60,27 +61,27 @@ export default function NavbarUI() {
                     size="sm"
                     startContent={<IoIosSearch className="w-6 h-6" />}
                     type="search"
-                />
+                /> */}
 
-                {/* <NavbarContent>
+                <NavbarContent justify="end">
                     <NavbarMenuToggle
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                         className="sm:hidden"
                         icon={<AvatarUI />}
                     />
-                </NavbarContent> */}
+                </NavbarContent>
                 <NavbarMenu className="items-end">
                     {menuItems.map((item, index) => (
                         <NavbarMenuItem key={`${item}-${index}`}>
                             <Link
                                 className="w-full"
                                 color={
-                                    index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+                                    index === 2 ? "primary" : "foreground"
                                 }
                                 href="#"
                                 size="lg"
                             >
-                                {item}
+                                {item === "Adestrador" ? <>Encontre um adestrador</> : <>{item}</>}
                             </Link>
                         </NavbarMenuItem>
                     ))}

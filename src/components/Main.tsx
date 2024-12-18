@@ -35,9 +35,9 @@ export default function Main() {
                     classNames={`min-h-12 bg-white p-2 ${selectedSpecies === "cat"
                         ? "bg-[#4587FC] text-white"
                         : "hover:bg-[#4587FC] hover:text-white focus:bg-[#4587FC] focus:text-white"
-                        }`}
+                        } shadow-md`}
                 >
-                    <span className="bg-sky-100 w-8 h-8 flex justify-center items-center rounded-lg">
+                    <span className="bg-sky-100 min-w-8 min-h-8 flex justify-center items-center rounded-lg">
                         <Image src="/radio/catRadio.png" alt="cat" width={20} height={20} />
                     </span>
                     <span className="px-2">Gatos</span>
@@ -47,9 +47,9 @@ export default function Main() {
                     classNames={`min-h-12 bg-white p-2 ${selectedSpecies === "dog"
                         ? "bg-[#4587FC] text-white"
                         : "hover:bg-[#4587FC] hover:text-white focus:bg-[#4587FC] focus:text-white"
-                        }`}
+                        } shadow-md`}
                 >
-                    <span className="bg-sky-100 w-8 h-8 flex justify-center items-center rounded-lg">
+                    <span className="bg-sky-100 min-w-8 min-h-8 flex justify-center items-center rounded-lg">
                         <Image src="/radio/dogRadio.png" alt="dog" width={20} height={20} />
                     </span>
                     <span className="px-2">Cães</span>
@@ -59,9 +59,9 @@ export default function Main() {
                     classNames={`min-h-12 bg-white p-2 ${selectedSpecies === null
                         ? "bg-[#4587FC] text-white"
                         : "hover:bg-[#4587FC] hover:text-white focus:bg-[#4587FC] focus:text-white"
-                        }`}
+                        } shadow-md`}
                 >
-                    <span className="bg-sky-100 w-8 h-8 flex justify-center items-center rounded-lg">
+                    <span className="bg-sky-100 min-w-8 min-h-8 flex justify-center items-center rounded-lg">
                         <Image src="/radio/catAndDog.png" alt="all" width={20} height={20} />
                     </span>
                     <span className="px-2">Todos</span>
