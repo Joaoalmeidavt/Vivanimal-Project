@@ -1,8 +1,7 @@
-'use client'
+"use client";
 import React from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@nextui-org/navbar";
 import { Link } from "@nextui-org/link";
-
 import Image from "next/image";
 import { IoMdMenu } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
@@ -15,44 +14,72 @@ const menuItems = [
     { value: "Adopte-me", link: "/ajuda-voluntaria" },
     { value: "Seja um voluntário", link: "/ajuda-voluntaria" },
     { value: "Veterinários Parceiros", link: "https://clivetfloratinoco.pt/" },
-    { value: "Adestrador", link: "https://www.dogaware.pt/?gad_source=1&gclid=CjwKCAiApY-7BhBjEiwAQMrrEcSoef6wgj_nWcKIqgTHx9eziVQ438WT2jaa581ZBj0YhRdAwcWiehoCJDwQAvD_BwE" }
+    { value: "Adestrador", link: "https://www.dogaware.pt/?gad_source=1&gclid=CjwKCAiApY-7BhBjEiwAQMrrEcSoef6wgj_nWcKIqgTHx9eziVQ438WT2jaa581ZBj0YhRdAwcWiehoCJDwQAvD_BwE" },
+    { value: "Dashboard", link: "/dashboard" },
 ];
+
 export default function NavbarUI() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const [isLogin, setIsLogin] = React.useState(true);
     const selfLinks = ["Home", "Adopte-me", "Seja um voluntário"];
+
     return (
         <Navbar isBordered onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll>
-            <NavbarContent justify="start">
-                <NavbarBrand className="mr-4 -mt-2" onClick={() => window.location.href = "/"}>
-                    <Image src="/logo.png" alt="logo" width={100} height={100} className="w-24 h-8" />
+            <NavbarContent justify="start" className="container">
+                <NavbarBrand className="mr-4 -mt-2 cursor-pointer" onClick={() => window.location.href = "/"}>
+                    <Image src="/logo.png" alt="logo" width={100} height={100} className="max-w-24 min-w-24 h-8" />
                 </NavbarBrand>
-                <NavbarContent className="hidden sm:flex gap-3 hover:text-[#1d7b89] text-semibold">
+                <NavbarContent className="hidden lg:flex gap-2 hover:text-[#1d7b89] text-semibold">
                     {menuItems.map((item, index) => (
-                        <NavbarItem key={index}>
-                            <Link color="foreground" href={item.link} target={selfLinks.includes(item.value) ? "_self" : "_blank"}  >
-                                {
-                                    index === 2 ? <ButtonUI classNames="!bg-transparent text-[#1d7b89]"  >
-
-                                        {item.value}
-                                    </ButtonUI> : <ButtonUI classNames="!bg-transparent active:bg-red-500"  >
-
-                                        {item.value}
-                                    </ButtonUI>
-                                }
-
-                            </Link>
-                        </NavbarItem>
+                        // Condicional para mostrar o link "Dashboard" apenas se isLogin for true
+                        (item.value !== "Dashboard" || isLogin) && (
+                            <NavbarItem key={index}>
+                                <Link
+                                    color="foreground"
+                                    href={item.link}
+                                    target={selfLinks.includes(item.value) ? "_self" : "_blank"}
+                                >
+                                    {index === 2 ? (
+                                        <ButtonUI classNames="!bg-transparent text-[#1d7b89] p-2">
+                                            {item.value}
+                                        </ButtonUI>
+                                    ) : (
+                                        <ButtonUI classNames="!bg-transparent active:bg-red-500 p-2">
+                                            {item.value}
+                                        </ButtonUI>
+                                    )}
+                                </Link>
+                            </NavbarItem>
+                        )
                     ))}
-
+                    {/* Adicionando o botão de login/logout baseado no estado de isLogin */}
+                    <NavbarItem>
+                        {isLogin ? (
+                            <ButtonUI
+                                classNames="!bg-transparent active:bg-red-500"
+                                onPress={() => setIsLogin(!isLogin)}
+                            >
+                                Logout
+                            </ButtonUI>
+                        ) : (
+                            <ButtonUI
+                                classNames="!bg-transparent active:bg-red-500"
+                                onPress={() => setIsLogin(!isLogin)}
+                            >
+                                Login
+                            </ButtonUI>
+                        )}
+                    </NavbarItem>
                 </NavbarContent>
+
+
             </NavbarContent>
 
-            <NavbarContent justify="center" className="max-w-12 -mr-64 lg:mr-0">
+            <NavbarContent justify="center" className="max-w-12 -mr-56 md:mr-0 lg:mr-0">
                 <AvatarUI isLogin={isLogin} />
             </NavbarContent>
-            <NavbarContent as="div" className="flex items-end justify-end md:hidden"  >
 
+            <NavbarContent as="div" className="flex items-end justify-end md:hidden">
                 <NavbarContent justify="end">
                     <NavbarMenuToggle
                         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -68,28 +95,40 @@ export default function NavbarUI() {
                 </NavbarContent>
                 <NavbarMenu className="items-end">
                     {menuItems.map((item, index) => (
-                        <NavbarMenuItem key={`${item.value}-${index}`}>
-                            <Link color="foreground" href={item.link} target={item.link === "/ajuda-voluntaria" ? "_self" : "_blank"} className="">
-                                {
-                                    index === 2 ?
+                        // Condicional para mostrar o link "Dashboard" apenas se isLogin for true
+                        (item.value !== "Dashboard" || isLogin) && (
+                            <NavbarMenuItem key={`${item.value}-${index}`}>
+                                <Link
+                                    color="foreground"
+                                    href={item.link}
+                                    target={selfLinks.includes(item.value) ? "_self" : "_blank"}
+                                >
+                                    {index === 2 ? (
                                         <ButtonUI classNames="!bg-transparent text-[#1d7b89] !text-lg font-semibold">
                                             {item.value}
                                         </ButtonUI>
-                                        :
+                                    ) : (
                                         <ButtonUI classNames="!bg-transparent active:bg-red-500 !text-lg">
                                             {item.value}
                                         </ButtonUI>
-                                }
-                            </Link>
-                        </NavbarMenuItem>
+                                    )}
+                                </Link>
+                            </NavbarMenuItem>
+                        )
                     ))}
                     <Divider />
-                    {isLogin ?
-                        <ButtonUI classNames="!bg-transparent active:bg-red-500 !text-lg" onPress={() => setIsLogin(!isLogin)}> Logout</ButtonUI>
-                        : <ButtonUI classNames="!bg-transparent active:bg-red-500 !text-lg" onPress={() => setIsLogin(!isLogin)}> Login</ButtonUI>}
+                    {isLogin ? (
+                        <>
+                            <ButtonUI classNames="!bg-transparent active:bg-red-500 !text-lg" onPress={() => setIsLogin(!isLogin)}>
+                                Logout
+                            </ButtonUI>
+                        </>
+                    ) : (
+                        <ButtonUI classNames="!bg-transparent active:bg-red-500 !text-lg" onPress={() => setIsLogin(!isLogin)}>
+                            Login
+                        </ButtonUI>
+                    )}
                 </NavbarMenu>
-
-
             </NavbarContent>
         </Navbar>
     );

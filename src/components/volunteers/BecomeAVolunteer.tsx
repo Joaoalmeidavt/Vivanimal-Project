@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Form } from "@nextui-org/form";
 import ButtonUI from "../ButtonUI";
 import { Input } from "@nextui-org/input";
@@ -7,16 +7,40 @@ import React from "react";
 export default function BecomeAVolunteer() {
     const [action, setAction] = React.useState<string | null>(null);
 
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        // Coleta os dados do formulário
+        const formData = new FormData(e.currentTarget as HTMLFormElement);
+        const data = Object.fromEntries(formData);
+
+        try {
+            const response = await fetch("/api/sendEmail", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                setAction("E-mail enviado com sucesso!");
+            } else {
+                setAction(`Erro: ${result.message}`);
+            }
+        } catch (error) {
+            console.error("Erro ao enviar o e-mail:", error);
+            setAction("Erro ao enviar o e-mail, tente novamente.");
+        }
+    };
+
     return (
         <Form
-            className="w-full h-full flex flex-col gap-4 md:border p-6 shadow-lg rounded-lg md:w-[90%]"
+            className="w-full h-full flex flex-col gap-8 md:border p-6 shadow-lg rounded-lg md:w-[90%]"
             validationBehavior="native"
             onReset={() => setAction("reset")}
-            onSubmit={(e) => {
-                e.preventDefault();
-                let data = Object.fromEntries(new FormData(e.currentTarget));
-                setAction(`submit ${JSON.stringify(data)}`);
-            }}
+            onSubmit={handleSubmit} // Atualizando para a nova função de submit
         >
             {/* Campos obrigatórios para o formulário */}
             <Input
@@ -77,8 +101,7 @@ export default function BecomeAVolunteer() {
                 name="objetivo"
                 placeholder="Insira seu objetivo"
                 type="text"
-                className="pt-4"
-            
+                className="pt-8"
             />
 
             <Input
@@ -89,6 +112,7 @@ export default function BecomeAVolunteer() {
                 name="experiencia_voluntariado"
                 placeholder="Descreva sua experiência"
                 type="text"
+                className="pt-2"
             />
 
             <Input
@@ -99,6 +123,7 @@ export default function BecomeAVolunteer() {
                 name="frequencia_voluntariado"
                 placeholder="Ex: 1x por semana"
                 type="text"
+                className="pt-3"
             />
 
             {/* Caixa de seleção para atividades que o voluntário pode colaborar */}
@@ -136,20 +161,20 @@ export default function BecomeAVolunteer() {
                 name="alergia_condicao"
                 placeholder="Descreva suas condições, se houver"
                 type="text"
-                className="pt-10"
+                className="pt-10 lg:pt-0"
             />
 
             <div className="flex gap-2">
-                <ButtonUI type="submit">
+                <ButtonUI type="submit" classNames="bg-primary text-white shadow-md">
                     Enviar
                 </ButtonUI>
-                <ButtonUI type="reset">
+                <ButtonUI type="reset" classNames="bg-red-400 text-white shadow-md">
                     Resetar
                 </ButtonUI>
             </div>
             {action && (
                 <div className="text-small text-default-500">
-                    Ação: <code>{action}</code>
+                    {action}
                 </div>
             )}
         </Form>

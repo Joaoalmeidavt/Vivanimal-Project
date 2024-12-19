@@ -18,18 +18,17 @@ export default function PetLover() {
     return (
         <>
             <motion.section
-                className="p-6 w-full h-44 bg-petLove rounded-lg flex justify-between overflow-hidden relative shadow-md"
+                className="p-6 w-full h-44 bg-petLove rounded-lg flex justify-between overflow-hidden relative shadow-md lg:h-64 lg:p-12"
                 {...fadeInFromRightAnimation}
             >
-                <article className="flex flex-col justify-center gap-4 w-2/3 text-white">
+                <article className="flex flex-col justify-center gap-4 w-2/3 text-white lg:gap-8 ">
                     <article>
-                        <h2 className="text-2xl font-semibold">Pet lover?</h2>
-                        <p className="text-sm">Ajude o abrigo e seja um voluntário</p>
+                        <h2 className="text-2xl font-semibold lg:text-7xl">Pet lover?</h2>
+                        <p className="text-sm lg:text-2xl">Ajude o abrigo e seja um voluntário</p>
                     </article>
                     <ButtonUI
-                        classNames="bg-black text-md text-white rounded-lg w-36"
+                        classNames="bg-black text-md text-white rounded-lg w-36 lg:min-h-12"
                         onPress={() => route.push('/ajuda-voluntaria')}
-
                     >
                         Quero ajudar
                     </ButtonUI>

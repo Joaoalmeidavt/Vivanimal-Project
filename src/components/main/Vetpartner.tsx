@@ -16,13 +16,13 @@ export default function VetPartner() {
     return (
         <>
             <motion.section
-                className="p-6 w-full h-24 bg-vetPartner rounded-lg flex justify-between overflow-hidden relative shadow-md"
+                className="p-6 w-full h-24 bg-vetPartner rounded-lg flex justify-between overflow-hidden relative shadow-md lg:p-12"
                 {...slideInFromLeft}
             >
                 <article className="w-full flex justify-between items-center text-white">
                     <article>
-                        <h2 className="text-2xl font-semibold">Vet Partner</h2>
-                        <p className="text-sm text-nowrap">Ajude o abrigo e seja</p>
+                        <h2 className="text-2xl font-semibold lg:text-4xl">Veterinário parceiro</h2>
+                   
                     </article>
                     <Link href="https://clivetfloratinoco.pt/" target="_blank" aria-label="Veteriná Partner">
                         <ButtonUI classNames="bg-[#87C7E2] text-md text-white rounded-lg w-24">

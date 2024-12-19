@@ -9,6 +9,11 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+@media (min-width: 1024px) {
+    .bg-petLove {
+        background-image: url('/petLoveLg.png');
+    }
+}
 
 .bg-vetPartner {
     background-image: url('/vetPartner.png');
@@ -16,10 +21,31 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+@media (min-width: 1024px) {
+    .bg-vetPartner {
+        background-image: url('/vetPartnerLg.png');
+    }
+}
 
 .bg-mbway {
     background-image: url('/mbway.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+@media (min-width: 1024px) {
+    .bg-mbway {
+        background-image: url('/mbwayLg.png');
+    }
+}
+.bg-needs {
+    background-image: url('/needs.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@media (min-width: 1024px) {
+    .bg-needs {
+        background-image: url('/needsLg.png');
+    }
 }
