@@ -102,7 +102,7 @@ export default function ModalUI({
                                                 <span className="text-left">
                                                     <p className="text-xs text-gray-600">Espécie</p>
                                                     <p className="font-bold text-blue-900">
-                                                        {species === "Cat" ? "Gato" : "Cachorro"}
+                                                        {species === "cat" ? "Gato" : "Cachorro"}
                                                     </p>
                                                 </span>
                                             </ButtonUI>
@@ -139,8 +139,8 @@ export default function ModalUI({
                                     onPress={handleAdopt}
                                     classNames="rounded-br-none h-12 bg-[#E04465] text-white"
                                 >
-                                    Me adopte!
-                                    {species === "Cat" ? (
+                                    Adopte-me!
+                                    {species === "cat" ? (
                                         <Image
                                             src="/animalModal/catPaws.png"
                                             alt="all"
@@ -187,7 +187,7 @@ export default function ModalUI({
                     </ModalBody>
                     <ModalFooter className="flex justify-center items-center">
                         <ButtonUI classNames='shadow-md -mt-8 w-full bg-gray-50 h-16 bg-primary text-white' onPress={() => window.location.href = `tel:+351910022248`}
-                        >Agende uma vista <BsFillTelephoneFill className="min-w-3 min-h-3" />
+                        >Agende uma visita <BsFillTelephoneFill className="min-w-3 min-h-3" />
                         </ButtonUI>
                     </ModalFooter>
                 </ModalContent>

@@ -26,7 +26,7 @@ export default function VetPartner() {
                     </article>
                     <Link href="https://clivetfloratinoco.pt/" target="_blank" aria-label="Veteriná Partner">
                         <ButtonUI classNames="bg-[#87C7E2] text-md text-white rounded-lg w-24">
-                            Contato
+                            Contacto
                         </ButtonUI>
                     </Link>
                 </article>

@@ -70,7 +70,7 @@ export default function Needs() {
 
 
             {/* Toaster Component */}
-            <Toaster position="top-right" />
+            <Toaster richColors position="top-right" />
         </>
     );
 }

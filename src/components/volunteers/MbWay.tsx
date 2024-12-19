@@ -66,7 +66,7 @@ export default function Mbway() {
             </motion.section>
 
             {/* Toaster Component */}
-            <Toaster position="top-right" />
+            <Toaster richColors  position="top-right" />
         </>
     );
 }

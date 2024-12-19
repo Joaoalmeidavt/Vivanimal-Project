@@ -14,7 +14,7 @@ export default function Page() {
             <section className="container max-w-[1024px] m-auto w-[90%] flex flex-col gap-8 justify-center items-center pt-8 pb-2 lg:p-12">
                 <Mbway />
                 <ButtonUI classNames='shadow-2xl -mt-8 w-full bg-gray-50 h-16  bg-needs' onPress={() => window.location.href = `tel:+351910022248`}
-                >Agende uma vista <BsFillTelephoneFill className="min-w-3 min-h-3" />
+                >Agende uma visita <BsFillTelephoneFill className="min-w-3 min-h-3" />
                 </ButtonUI>
 
                 <section className='w-full justify-left items-center'>

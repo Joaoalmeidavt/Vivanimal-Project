@@ -9,7 +9,7 @@ export const texts = {
             "size": "small",
             "status": false,
             "picture": "https://utfs.io/f/ERRgUQg89ZpiC1t7KzN3jWSrTqEfgyNGXoFiA81b76zvJIYO",
-            "description": "Muito amoroso e brincalhão, o Mi está esterelizado e com as vacinas atualizadas a espera do seu novo lar."
+            "description": "Muito amoroso e brincalhão, o Mi está esterelizado e com as vacinas atualizadas à espera do seu novo lar."
         },
         {
             "id": 2,
