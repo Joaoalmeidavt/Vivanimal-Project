@@ -1,6 +1,6 @@
 'use client';
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import Categories from "./main/Categories";
 import PetCard from "./main/PetCard";
 import PetLover from "./main/PetLover";
@@ -12,7 +12,25 @@ import ModalUI from "./ModalUI.tsx/ModalUI";
 
 export default function Main() {
     const [selectedSpecies, setSelectedSpecies] = useState<string | null>(null);
-    const animals = texts.animals;
+    const [animals, setAnimals] = useState<any[]>([]); // Define a state para armazenar os animais
+    const [loading, setLoading] = useState<boolean>(true); // Para controle de loading
+    const [error, setError] = useState<string | null>(null); // Para controlar erro de requisição
+
+    // Buscar os animais da API usando axios
+    useEffect(() => {
+        const fetchAnimals = async () => {
+            try {
+                const response = await axios.get("http://ec2-13-48-55-28.eu-north-1.compute.amazonaws.com:8080/api/pets");
+                setAnimals(response.data); // Define os dados recebidos na state 'animals'
+                setLoading(false); // Altera o estado de loading
+            } catch (error) {
+                setError("Erro ao carregar os animais.");
+                setLoading(false);
+            }
+        };
+
+        fetchAnimals();
+    }, []); // Executa apenas uma vez ao carregar o componente
 
     // Filtra os animais com base na espécie selecionada
     const filteredAnimals = selectedSpecies
@@ -20,6 +38,14 @@ export default function Main() {
             animal.species.toLowerCase() === selectedSpecies.toLowerCase()
         )
         : animals;
+
+    if (loading) {
+        return <div>Carregando...</div>; // Exibe uma mensagem de loading
+    }
+
+    if (error) {
+        return <div>{error}</div>; // Exibe um erro, caso aconteça
+    }
 
     return (
         <section className="container max-w-[1024px] m-auto w-[90%] flex flex-col gap-8 justify-center items-center pt-8 pb-24">
@@ -69,7 +95,6 @@ export default function Main() {
 
             <article className="flex flex-wrap gap-4 justify-center md:justify-arround">
                 {/* Renderiza os animais filtrados */}
-
                 {filteredAnimals.map((animal) => (
                     <ModalUI key={animal.id}
                         name={animal.name}
@@ -87,9 +112,7 @@ export default function Main() {
                             picture={animal.picture}
                         />
                     </ModalUI>
-
                 ))}
-
             </article>
         </section>
     );
