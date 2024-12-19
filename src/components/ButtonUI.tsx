@@ -1,16 +1,19 @@
-import { Button, ButtonGroup } from '@nextui-org/button';
+import { Button } from '@nextui-org/button';
 
 export default function ButtonUI({
   children,
   classNames,
-  type,
+  type = "button", // Define o valor default como "button"
   onPress,
-
 }: {
   children: React.ReactNode;
   classNames?: string;
-  type?: string;
+  type?: "button" | "submit" | "reset"; // Corrigido para aceitar essas opções de tipo
   onPress?: () => void;
 }) {
-  return <Button className={`${classNames}`} onPress={onPress} >{children}</Button>;
+  return (
+    <Button className={`${classNames}`} onPress={onPress} type={type}>
+      {children}
+    </Button>
+  );
 }

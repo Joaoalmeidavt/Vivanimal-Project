@@ -89,7 +89,7 @@ export default function Page() {
                                 status={animal.status}
                                 picture={animal.picture}
                                 description={animal.description}>
-                                    
+
                                 <PetCard
                                     key={animal.id}
                                     name={animal.name}
@@ -102,9 +102,12 @@ export default function Page() {
 
                     </article>
                 </>
-                ) : (<AddAnimalForm />)}
-
-
+                ) : (<>
+                    <article className='flex items-center justify-center'>
+                        <h2 className="text-xl font-semibold text-blue-900 w-full pb-6">Adicione um novo animal</h2>
+                    </article><AddAnimalForm />
+                </>
+                )}
             </section>
             <FooterVolunteer />
         </main>

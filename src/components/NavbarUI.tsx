@@ -15,7 +15,7 @@ const menuItems = [
     { value: "Seja um voluntário", link: "/ajuda-voluntaria" },
     { value: "Veterinários Parceiros", link: "https://clivetfloratinoco.pt/" },
     { value: "Adestrador", link: "https://www.dogaware.pt/?gad_source=1&gclid=CjwKCAiApY-7BhBjEiwAQMrrEcSoef6wgj_nWcKIqgTHx9eziVQ438WT2jaa581ZBj0YhRdAwcWiehoCJDwQAvD_BwE" },
-    { value: "Dashboard", link: "/dashboard" },
+    // { value: "Dashboard", link: "/dashboard" },
 ];
 
 export default function NavbarUI() {
