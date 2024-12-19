@@ -3,7 +3,7 @@ export const texts = {
         {
             "id": 1,
             "name": "Mi",
-            "species": "Cat",
+            "species": "cat",
             "age": 1,
             "gender": "male",
             "size": "small",
@@ -14,7 +14,7 @@ export const texts = {
         {
             "id": 2,
             "name": "Mãe",
-            "species": "Dog",
+            "species": "dog",
             "age": 3,
             "gender": "female",
             "size": "small",
@@ -25,7 +25,7 @@ export const texts = {
         {
             "id": 3,
             "name": "Filha",
-            "species": "Dog",
+            "species": "dog",
             "age": 2,
             "gender": "female",
             "size": "small",
@@ -36,7 +36,7 @@ export const texts = {
         {
             "id": 4,
             "name": "Gatinho",
-            "species": "Cat",
+            "species": "cat",
             "age": 2,
             "gender": "male",
             "size": "small",
@@ -47,7 +47,7 @@ export const texts = {
         {
             "id": 5,
             "name": "Xano",
-            "species": "Dog",
+            "species": "dog",
             "age": 4,
             "gender": "male",
             "size": "medium",
@@ -58,7 +58,7 @@ export const texts = {
         {
             "id": 6,
             "name": "Monty",
-            "species": "Cat",
+            "species": "cat",
             "age": 3,
             "gender": "male",
             "size": "small",
@@ -69,7 +69,7 @@ export const texts = {
         {
             "id": 7,
             "name": "Hugo",
-            "species": "Dog",
+            "species": "dog",
             "age": 8,
             "gender": "male",
             "size": "medium",
@@ -80,7 +80,7 @@ export const texts = {
         {
             "id": 8,
             "name": "Zero",
-            "species": "Cat",
+            "species": "cat",
             "age": 0,
             "gender": "male",
             "size": "small",
@@ -91,7 +91,7 @@ export const texts = {
         {
             "id": 9,
             "name": "Sousa",
-            "species": "Cat",
+            "species": "cat",
             "age": 10,
             "gender": "male",
             "size": "small",
@@ -102,14 +102,90 @@ export const texts = {
         {
             "id": 10,
             "name": "Bolt",
-            "species": "Dog",
+            "species": "dog",
             "age": 2,
             "gender": "male",
             "size": "large",
             "status": false,
             "picture": "https://utfs.io/f/ERRgUQg89Zpinc5aAEYLMIH6eDT1y3ZAic8x0YmgjXzq5K2W",
             "description": "O Bolt é um cão ainda muito jovem que tem muito amor para dar!"
+        },
+        {
+            "id": 11,
+            "name": "Paulinha",
+            "species": "dog",
+            "age": 5,
+            "gender": "female",
+            "size": "large",
+            "status": false,
+            "picture": "https://utfs.io/f/ERRgUQg89ZpiRIYmIY4nH5jw73uUCT2doc4ksJXbx6y1B8hP",
+            "description": "A Paulinha é uma cadela que adora os pequeninos, ela procura um lar cheio de amor e alegria."
+        },
+        {
+            "id": 12,
+            "name": "Alana",
+            "species": "dog",
+            "age": 4,
+            "gender": "female",
+            "size": "large",
+            "status": false,
+            "picture": "https://utfs.io/f/ERRgUQg89ZpiJYsi0NyQsE1UwTnBODkAhbR65MW4PoFHC7Vr",
+            "description": "A Alana é muito amorosa, muito linda e está a procura da sua nova família."
+        },
+        {
+            "id": 13,
+            "name": "Ana",
+            "species": "cat",
+            "age": 5,
+            "gender": "female",
+            "size": "small",
+            "status": false,
+            "picture": "https://utfs.io/f/ERRgUQg89ZpiD1x4cKqd9ORFrA6oZix45Md0Bj7bsqtIGfXy",
+            "description": "A Ana é uma gatinha linda que procura um lar cheio de amor e alegria."
+        },
+        {
+            "id": 14,
+            "name": "Moranguinha",
+            "species": "cat",
+            "age": 3,
+            "gender": "female",
+            "size": "small",
+            "status": false,
+            "picture": "https://utfs.io/f/ERRgUQg89Zpiin2JHsUrU452lxZM9X1WboSInvqNsGwPmFCH",
+            "description": "A Moranguinha é uma gatinha linda que procura um lar cheio de amor e alegria."
+        },
+        {
+            "id": 15,
+            "name": "Natacha",
+            "species": "cat",
+            "age": 6,
+            "gender": "female",
+            "size": "small",
+            "status": false,
+            "picture": "https://utfs.io/f/ERRgUQg89ZpiEBWTO789ZpiUyW04tLPCfzgrV71cuKwIDNqY",
+            "description": "A Natacha tem uma cor linda e rara e merece um lar cheio de amor."
+        },
+        {
+            "id": 16,
+            "name": "Borboleta",
+            "species": "cat",
+            "age": 3,
+            "gender": "female",
+            "size": "small",
+            "status": false,
+            "picture": "https://utfs.io/f/ERRgUQg89ZpizVeXQ7zmf8jvGRJHBrs1xqawmd4ZlIDetpTn",
+            "description": "A Borboleta é uma das gatinhas mais amorosas do Vivanimal, e apesar disso ainda não encontrou a sua nova família, será que é a tua?"
+        },
+        {
+            "id": 17,
+            "name": "Frida",
+            "species": "cat",
+            "age": 4,
+            "gender": "female",
+            "size": "small",
+            "status": false,
+            "picture": "https://utfs.io/f/ERRgUQg89ZpiQg6c4X1VAL9JktlZO4K10dDIocTnRyGswue2",
+            "description": "A Frida é uma gatinha muito curiosa que procura um lar cheio de amor e alegria."
         }
     ]
 }
-
