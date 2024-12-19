@@ -42,7 +42,7 @@ export default function Needs() {
                         <h2 className="text-2xl font-semibold lg:text-5xl">Nossas maiores necessidades</h2>
                     </article>
                     <Image
-                        src={"/mbwayDog.png"}
+                        src={"/needsCat.png"}
                         alt="Imagem decorativa de um cachorro"
                         width={150}
                         height={150}

@@ -98,21 +98,30 @@ export default function NavbarUI() {
                         // Condicional para mostrar o link "Dashboard" apenas se isLogin for true
                         (item.value !== "Dashboard" || isLogin) && (
                             <NavbarMenuItem key={`${item.value}-${index}`}>
-                                <Link
-                                    color="foreground"
-                                    href={item.link}
-                                    target={selfLinks.includes(item.value) ? "_self" : "_blank"}
-                                >
-                                    {index === 2 ? (
-                                        <ButtonUI classNames="!bg-transparent text-[#1d7b89] !text-lg font-semibold">
+                                {index === 2 ? (
+                                    <ButtonUI classNames="!bg-transparent">
+                                        <Link
+                                            color="foreground"
+                                            href={item.link}
+                                            target={selfLinks.includes(item.value) ? "_self" : "_blank"}
+                                            className="text-[#1d7b89] !text-lg font-semibold"
+                                        >
                                             {item.value}
-                                        </ButtonUI>
-                                    ) : (
-                                        <ButtonUI classNames="!bg-transparent active:bg-red-500 !text-lg">
+                                        </Link>
+                                    </ButtonUI>
+                                ) : (
+                                    <ButtonUI classNames="!bg-transparent">
+                                        <Link
+                                            color="foreground"
+                                            href={item.link}
+                                            target={selfLinks.includes(item.value) ? "_self" : "_blank"}
+                                            className="!text-lg"
+                                        >
                                             {item.value}
-                                        </ButtonUI>
-                                    )}
-                                </Link>
+                                        </Link>
+                                    </ButtonUI>
+                                )}
+
                             </NavbarMenuItem>
                         )
                     ))}
