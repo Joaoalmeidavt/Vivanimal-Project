@@ -23,7 +23,7 @@ export default function Main() {
         : animals;
 
     return (
-        <section className="container m-auto w-[90%] flex flex-col gap-8 justify-center items-center pt-8 pb-24">
+        <section className="container max-w-[1024px] m-auto w-[90%] flex flex-col gap-8 justify-center items-center pt-8 pb-24">
             <PetLover />
             <VetPartner />
             <h2 className="text-xl font-semibold text-blue-900 w-full">
@@ -33,8 +33,8 @@ export default function Main() {
                 <ButtonUI
                     onPress={() => setSelectedSpecies("cat")}
                     classNames={`min-h-12 bg-white p-2 ${selectedSpecies === "cat"
-                        ? "bg-[#4587FC] text-white"
-                        : "hover:bg-[#4587FC] hover:text-white focus:bg-[#4587FC] focus:text-white"
+                        ? "bg-primary text-white"
+                        : "hover:bg-primary hover:text-white focus:bg-primary focus:text-white"
                         } shadow-md`}
                 >
                     <span className="bg-sky-100 min-w-8 min-h-8 flex justify-center items-center rounded-lg">
@@ -45,8 +45,8 @@ export default function Main() {
                 <ButtonUI
                     onPress={() => setSelectedSpecies("dog")}
                     classNames={`min-h-12 bg-white p-2 ${selectedSpecies === "dog"
-                        ? "bg-[#4587FC] text-white"
-                        : "hover:bg-[#4587FC] hover:text-white focus:bg-[#4587FC] focus:text-white"
+                        ? "bg-primary text-white"
+                        : "hover:bg-primary hover:text-white focus:bg-primary focus:text-white"
                         } shadow-md`}
                 >
                     <span className="bg-sky-100 min-w-8 min-h-8 flex justify-center items-center rounded-lg">
@@ -57,8 +57,8 @@ export default function Main() {
                 <ButtonUI
                     onPress={() => setSelectedSpecies(null)}
                     classNames={`min-h-12 bg-white p-2 ${selectedSpecies === null
-                        ? "bg-[#4587FC] text-white"
-                        : "hover:bg-[#4587FC] hover:text-white focus:bg-[#4587FC] focus:text-white"
+                        ? "bg-primary text-white"
+                        : "hover:bg-primary hover:text-white focus:bg-primary focus:text-white"
                         } shadow-md`}
                 >
                     <span className="bg-sky-100 min-w-8 min-h-8 flex justify-center items-center rounded-lg">
@@ -68,7 +68,7 @@ export default function Main() {
                 </ButtonUI>
             </article>
 
-            <article className="flex flex-wrap gap-4 justify-center">
+            <article className="flex flex-wrap gap-4 justify-center md:justify-arround">
                 {/* Renderiza os animais filtrados */}
 
                 {filteredAnimals.map((animal) => (

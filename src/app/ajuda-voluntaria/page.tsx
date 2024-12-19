@@ -10,7 +10,7 @@ import { BsFillTelephoneFill } from 'react-icons/bs'
 export default function Page() {
     return (
         <main className='h-full bg-gray-50 relative shadow'>
-            <section className="container m-auto w-[90%] flex flex-col gap-8 justify-center items-center pt-8 pb-24">
+            <section className="container max-w-[1024px] m-auto w-[90%] flex flex-col gap-8 justify-center items-center pt-8 pb-2">
                 <Mbway />
                 <ButtonUI classNames='bg-white shadow-md -mt-8' onPress={() => window.location.href = `tel:+351910022248`}
                 >Agende uma vista <BsFillTelephoneFill className="min-w-3 min-h-3" />
@@ -23,10 +23,8 @@ export default function Page() {
                     <p>
                         produto de limpeza - lixivia****, detergente de louças, lava-tudo**, spray de tecido, detergente de roupas
                     </p>
-
-
-
                 </section>
+                <h2 className="text-xl font-semibold text-blue-900 w-full">Seja um voluntário</h2>
                 <BecomeAVolunteer />
 
 
@@ -35,7 +33,6 @@ export default function Page() {
 
 
                 adotar - agendar visita - marcação telefonica -
-                voluntario usa o formulário
 
             </section>
             <FooterVolunteer />

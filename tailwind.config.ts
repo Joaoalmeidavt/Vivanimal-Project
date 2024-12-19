@@ -1,12 +1,12 @@
-import {nextui} from '@nextui-org/theme';
-import type { Config } from 'tailwindcss'
+import { nextui } from '@nextui-org/theme';
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/components/(avatar|button|dropdown|form|input|link|modal|navbar|ripple|spinner|menu|divider|popover).js"
+    "./node_modules/@nextui-org/theme/dist/components/(avatar|button|dropdown|form|input|link|modal|navbar|ripple|spinner|menu|divider|popover).js",
   ],
   theme: {
     extend: {
@@ -15,8 +15,12 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        primary: '#1d7b89',
+      },
     },
   },
   plugins: [nextui()],
-}
-export default config
+};
+
+export default config;

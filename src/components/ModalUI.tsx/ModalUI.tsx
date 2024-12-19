@@ -7,6 +7,7 @@ import Image from "next/image";
 import { PetCardProps } from "@/types/types";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { TbCoinEuroFilled } from "react-icons/tb";
+import { useRouter } from "next/navigation";
 
 export default function ModalUI({
     children,
@@ -22,6 +23,7 @@ export default function ModalUI({
     children: React.ReactNode,
 } & PetCardProps) {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const route = useRouter();
 
 
 
@@ -33,7 +35,6 @@ export default function ModalUI({
         <>
             <button
                 onClick={() => handleOpen(!isOpen)}
-                className="w-full"
             >
                 {children}
             </button>
@@ -62,11 +63,11 @@ export default function ModalUI({
                                     <section className=" flex flex-col gap-2 -mt-2">
                                         <article className="flex gap-2">
                                             <ButtonUI
-                                                classNames={`min-h-16 w-1/2 bg-white p-2 flex justify-start items-center ga p-2 shadow-md
+                                                classNames={`min-h-16 w-1/2 bg-white p-2 flex justify-start items-center ga p-2 shadow-md 
                                             `}
                                             >
                                                 <span className="bg-sky-100 w-12 h-12 flex justify-center items-center rounded-lg">
-                                                    <Image src="/radio/catAndDog.png" alt="all" width={30} height={30} />
+                                                    <Image src="/animalModal/petAge.png" alt="all" width={20} height={20} />
                                                 </span>
                                                 <span className="text-left">
                                                     <p className="text-xs text-gray-600">Idade</p>
@@ -77,7 +78,7 @@ export default function ModalUI({
                                             `}
                                             >
                                                 <span className="bg-sky-100 w-12 h-12 flex justify-center items-center rounded-lg">
-                                                    <Image src="/radio/catAndDog.png" alt="all" width={30} height={30} />
+                                                    <Image src="/animalModal/catPawsDark.png" alt="all" width={30} height={30} />
                                                 </span>
                                                 <span className="text-left">
                                                     <p className="text-xs text-gray-600">Espécie</p>
@@ -90,7 +91,7 @@ export default function ModalUI({
                                             `}
                                             >
                                                 <span className="bg-sky-100 w-12 h-12 flex justify-center items-center rounded-lg">
-                                                    <Image src="/radio/catAndDog.png" alt="all" width={30} height={30} />
+                                                    <Image src="/animalModal/gender.png" alt="all" width={30} height={30} />
                                                 </span>
                                                 <span className="text-left">
                                                     <p className="text-xs text-gray-600">Gênero</p>
@@ -101,7 +102,7 @@ export default function ModalUI({
                                             `}
                                             >
                                                 <span className="bg-sky-100 w-12 h-12 flex justify-center items-center rounded-lg">
-                                                    <Image src="/radio/catAndDog.png" alt="all" width={30} height={30} />
+                                                    <Image src="/animalModal/petSize.png" alt="all" width={30} height={30} className="transform scale-x-[-1]" />
                                                 </span>
                                                 <span className="text-left">
                                                     <p className="text-xs text-gray-600">Tamanho</p>
@@ -121,10 +122,16 @@ export default function ModalUI({
                                 </article>
                             </ModalBody>
                             <ModalFooter className="">
-                                <ButtonUI onPress={onClose} classNames="rounded-br-none h-12 text-gray-600 bg-gray-300">
+                                <ButtonUI onPress={() => {
+                                    onClose();
+                                    window.location.href = `tel:+351910022248`
+                                }} classNames="rounded-br-none h-12 text-gray-600 bg-gray-300 hover:bg-primary/80 hover:text-white" >
                                     Contacto <BsFillTelephoneFill className="min-w-3 min-h-3" />
                                 </ButtonUI>
-                                <ButtonUI onPress={onClose} classNames="rounded-br-none h-12 text-gray-600">
+                                <ButtonUI onPress={() => {
+                                    onClose();
+                                    route.push('/ajuda-voluntaria');
+                                }} classNames="rounded-br-none h-12 text-gray-600 hover:bg-primary/80 hover:text-white">
                                     Apadrinhar <TbCoinEuroFilled className="min-w-4 min-h-4" />
                                 </ButtonUI>
                                 <ButtonUI onPress={onClose} classNames="rounded-br-none h-12 bg-[#E04465] text-white">

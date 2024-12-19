@@ -19,7 +19,7 @@ export default function PetCard({
     };
 
     return (
-        <Card className="max-w-sm p-4">
+        <Card className="max-w-sm p-4 md:max-w-[326px]">
             <CardBody className="overflow-visible">
                 <Image
                     alt={name}
@@ -36,7 +36,7 @@ export default function PetCard({
                     <p className="text-gray-600 text-sm ">{status === true ? "Adotado" : "Disponível para adoção"}</p>
                 </article>
                 <article className="pt-2">
-                    <button
+                    {/* <button
                         className="bg-gray-200/50 p-2 rounded-lg"
                         onClick={handleFavoriteToggle}
                     >
@@ -45,7 +45,7 @@ export default function PetCard({
                         ) : (
                             <IoIosHeartEmpty className="w-6 h-6 text-gray-600" />
                         )}
-                    </button>
+                    </button> */}
                 </article>
             </CardHeader>
         </Card>

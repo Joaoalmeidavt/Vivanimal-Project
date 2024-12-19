@@ -29,6 +29,7 @@ export default function PetLover() {
                     <ButtonUI
                         classNames="bg-black text-md text-white rounded-lg w-36"
                         onPress={() => route.push('/ajuda-voluntaria')}
+
                     >
                         Quero ajudar
                     </ButtonUI>
