@@ -10,11 +10,13 @@ export default function BecomeAVolunteer() {
     const [isDisabled, setIsDisabled] = useState(false);
 
     const handlePress = () => {
-        toast.success("Formulário enviado com sucesso!"); // Mostra o toast
+        { !isDisabled ? toast.success("Formulário enviado com sucesso!") : toast.warning("Seu formulário já foi submetido!"); }
+        // Mostra o toast
         setIsDisabled(true); // Desativa o botão
         setTimeout(() => {
             setIsDisabled(false); // Reativa após 5 segundos
         }, 5000);
+
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -100,7 +102,7 @@ export default function BecomeAVolunteer() {
                 labelPlacement="outside"
                 name="telemovel"
                 placeholder="Insira seu telemóvel"
-                type="tel"
+                type="number"
             />
 
             <Input
