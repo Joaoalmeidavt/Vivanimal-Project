@@ -2,10 +2,20 @@
 import { Form } from "@nextui-org/form";
 import ButtonUI from "../ButtonUI";
 import { Input } from "@nextui-org/input";
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "sonner";
 
 export default function BecomeAVolunteer() {
     const [action, setAction] = React.useState<string | null>(null);
+    const [isDisabled, setIsDisabled] = useState(false);
+
+    const handlePress = () => {
+        toast.success("Formulário enviado com sucesso!"); // Mostra o toast
+        setIsDisabled(true); // Desativa o botão
+        setTimeout(() => {
+            setIsDisabled(false); // Reativa após 5 segundos
+        }, 5000);
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -165,7 +175,13 @@ export default function BecomeAVolunteer() {
             />
 
             <div className="flex gap-2">
-                <ButtonUI type="submit" classNames="bg-primary text-white shadow-md">
+                <ButtonUI
+                    type="submit"
+                    classNames={`bg-primary text-white shadow-md ${isDisabled ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-700"
+                        }`}
+                    onPress={handlePress}
+                    disabled={isDisabled} // Propriedade que controla se o botão está desativado
+                >
                     Enviar
                 </ButtonUI>
                 <ButtonUI type="reset" classNames="bg-red-400 text-white shadow-md">
